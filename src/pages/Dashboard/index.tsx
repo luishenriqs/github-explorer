@@ -3,9 +3,9 @@ import api from "../../services/api";
 import logoImg from "../../assets/logo.svg";
 import { RepoLink } from "../../components/RepoLink";
 import { Button } from "../../components/Button";
-import { Title, Form, Error, Text, Repositories } from "./styles";
+import { Title, Form, Error, SubTitle, Repositories } from "./styles";
 
-interface Repository {
+interface IRepository {
   full_name: string;
   description: string;
   owner: {
@@ -13,9 +13,10 @@ interface Repository {
     avatar_url: string;
   };
 }
+
 const Dashboard: React.FC = () => {
   const [newRepo, setNewRepo] = useState("");
-  const [repositories, setRepositories] = useState<Repository[]>(() => {
+  const [repositories, setRepositories] = useState<IRepository[]>(() => {
     const storagedRepositories = localStorage.getItem(
       "@GithubExplorer:repositories"
     );
@@ -48,7 +49,7 @@ const Dashboard: React.FC = () => {
     }
     const page = 1;
     try {
-      const response = await api.get<Repository>(
+      const response = await api.get<IRepository>(
         `/users/${newRepo}/repos?type=owner/page=${page}&per_page=5`
       );
       const repository = response.data;
@@ -73,9 +74,11 @@ const Dashboard: React.FC = () => {
         <Button type="submit">Pesquisar</Button>
       </Form>
       {inputError && <Error>{inputError}</Error>}
-      <div>
-        <Text>Repositórios</Text>
-      </div>
+
+      <SubTitle>
+        <text>Repositórios</text>
+      </SubTitle>
+
       <Repositories>
         {repos.map((rep) => (
           <RepoLink repo={rep} />

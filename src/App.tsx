@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GlobalStyle from "./styles/global";
 import Dashboard from "../src/pages/Dashboard";
-import Repository from "../src/pages/Repository";
+import Branches from "../src/pages/Branches";
 
 const App: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const App: React.FC = () => {
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="repository" element={<Repository />} />
+        <Route path="branches" element={<Branches />} />
       </Routes>
     </BrowserRouter>
   );

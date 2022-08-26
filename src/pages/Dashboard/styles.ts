@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 interface FormProps {
   hasError: boolean;
@@ -26,7 +26,7 @@ export const Form = styled.form<FormProps>`
     border: 2px solid #fff;
     border-right: 0;
 
-    ${props =>
+    ${(props) =>
       props.hasError &&
       css`
         border-color: #c53030;
@@ -45,10 +45,12 @@ export const Error = styled.span`
   margin-bottom: 20px;
 `;
 
-export const Text = styled.text`
-  font-size: 24px;
-  color: #3a3a3a;
-  line-height: 56px;
+export const SubTitle = styled.div`
+  text {
+    font-size: 24px;
+    color: #3a3a3a;
+    line-height: 56px;
+  }
 `;
 
 export const Repositories = styled.div`
@@ -56,7 +58,6 @@ export const Repositories = styled.div`
   max-width: 900px;
 
   div {
-    margin: 0 16px;
     flex: 1;
     strong {
       font-size: 20px;

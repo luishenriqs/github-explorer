@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Header = styled.header`
   display: flex;
@@ -13,7 +13,7 @@ export const Header = styled.header`
     transition: color 0.4s;
 
     &:hover {
-      color: #666
+      color: #666;
     }
 
     svg {
@@ -24,7 +24,7 @@ export const Header = styled.header`
 
 export const RepositoryInfo = styled.header`
   margin-top: 80px;
-
+  margin-bottom: 80px;
   header {
     display: flex;
     align-items: center;
@@ -36,8 +36,6 @@ export const RepositoryInfo = styled.header`
     }
 
     div {
-      margin-left: 24px;
-
       strong {
         font-size: 36px;
         color: #3d3d4d;
@@ -57,7 +55,6 @@ export const RepositoryInfo = styled.header`
     margin-top: 40px;
 
     li {
-
       & + li {
         margin-left: 80px;
       }
@@ -117,5 +114,31 @@ export const Issues = styled.div`
   svg {
     margin-left: auto;
     color: #cbcbd6;
+  }
+`;
+
+export const SubTitle = styled.div`
+  text {
+    font-size: 24px;
+    color: #3a3a3a;
+    line-height: 56px;
+  }
+`;
+
+export const Repositories = styled.div`
+  margin-top: 10px;
+  max-width: 900px;
+
+  div {
+    flex: 1;
+    strong {
+      font-size: 20px;
+      color: #3d3d4d;
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    color: #3d3d4d;
   }
 `;
