@@ -12,7 +12,7 @@ export const RepoLink: React.FC<IData> = (data: IData) => {
           <Link
             key={data.repo.name}
             to={{
-              pathname: "/branches",
+              pathname: "/commits",
               search: `?${data.repo.full_name}`,
             }}
           >
