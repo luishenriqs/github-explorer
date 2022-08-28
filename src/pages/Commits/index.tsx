@@ -9,13 +9,10 @@ import { Header, RepositoryInfo, SubTitle } from "./styles";
 const Commits: React.FC = () => {
   const [commits, setCommits] = useState([]);
 
-  /*DEFINIR UM LOOPING AQUI*/
-  /*DEFINIR UM LOOPING AQUI*/
-  /*DEFINIR UM LOOPING AQUI*/
-  /*DEFINIR UM LOOPING AQUI*/
-  const autor = Array(commits[1]);
-
-  console.log(".message====> ", typeof autor, autor[0]?.commit.message);
+  const array: any[] = [];
+  for (let i = 0; i < commits.length; i++) {
+    array.push(commits[i]);
+  }
 
   const location = useLocation();
   const [, full_name] = location.search.split("?");
@@ -45,7 +42,7 @@ const Commits: React.FC = () => {
         <text>Commits</text>
       </SubTitle>
 
-      {autor.map((commts) => (
+      {array.map((commts) => (
         <RepositoryInfo>
           <header>
             <div>
