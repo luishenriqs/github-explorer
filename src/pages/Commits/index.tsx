@@ -3,8 +3,7 @@ import api from "../../services/api";
 import { Link, useLocation } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
 import logoImg from "../../assets/logo.svg";
-
-import { Header, RepositoryInfo, SubTitle } from "./styles";
+import { Header, CommitsInfo, SubTitle } from "./styles";
 
 const Commits: React.FC = () => {
   const [commits, setCommits] = useState([]);
@@ -24,7 +23,6 @@ const Commits: React.FC = () => {
       const commits = response.data;
       setCommits(commits);
     };
-
     loadCommmits();
   }, [url]);
 
@@ -43,7 +41,7 @@ const Commits: React.FC = () => {
       </SubTitle>
 
       {array.map((commts) => (
-        <RepositoryInfo>
+        <CommitsInfo>
           <header>
             <div>
               <strong>{commts?.commit.message}</strong>
@@ -55,10 +53,7 @@ const Commits: React.FC = () => {
               <strong>{commts?.commit.author.name}</strong>
               <span>Name</span>
             </li>
-            <li>
-              <strong>{commts?.commit.author.emai}</strong>
-              <span>Email</span>
-            </li>
+
             <li>
               <strong>{commts?.commit.author.date}</strong>
               <span>Date</span>
@@ -72,7 +67,7 @@ const Commits: React.FC = () => {
             <a href={commts?.commit.url}>{commts?.commit.url}</a>
             <span>Link</span>
           </div>
-        </RepositoryInfo>
+        </CommitsInfo>
       ))}
     </>
   );

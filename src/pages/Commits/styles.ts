@@ -30,11 +30,10 @@ export const SubTitle = styled.div`
   }
 `;
 
-export const RepositoryInfo = styled.header`
-  margin-top: 30px;
-  margin-bottom: 80px;
-  margin-top: 10px;
-  background: #fff;
+export const CommitsInfo = styled.header`
+  margin-top: 20px;
+
+  background: #c28f8b;
   border-radius: 5px;
   width: 100%;
   padding: 24px;
@@ -49,13 +48,13 @@ export const RepositoryInfo = styled.header`
   header {
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     div {
       display: flex;
       flex-direction: column;
       strong {
         font-size: 18px;
-        color: #3d3d4d;
+        color: #3a3a3a;
       }
       span {
         display: block;
@@ -68,7 +67,7 @@ export const RepositoryInfo = styled.header`
   ul {
     display: flex;
     list-style: none;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     li {
       & + li {
         margin-left: 80px;
@@ -77,7 +76,7 @@ export const RepositoryInfo = styled.header`
       strong {
         display: block;
         font-size: 18px;
-        color: #3d3d4d;
+        color: #3a3a3a;
       }
 
       span {
@@ -93,7 +92,7 @@ export const RepositoryInfo = styled.header`
     flex-direction: column;
     a {
       font-size: 16px;
-      color: #3d3d4d;
+      color: #3a3a3a;
     }
     span {
       display: block;
