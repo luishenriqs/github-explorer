@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# Introduction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Teste Técnico criando um buscador para o Github
 
-## Available Scripts
+# PARA EXECUTAR O PROJETO
 
-In the project directory, you can run:
+## TECNOLOGIAS UTILIZADAS
 
-### `yarn start`
+- ReactJS, React-dom, React-router-dom, Axios, Styled-components, Typescript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## CLONE O PROJETO DO REPOSITÓRIO
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+https://github.com/luishenriqs/github-explorer
 
-### `yarn test`
+## INSTALAÇÃO DOS PACOTES
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Abra o terminal dentro da pasta do projeto e execute o comando yarn.
 
-### `yarn build`
+## INICIALIZAÇÃO DO PROJETO
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- NO NAVEGADOR - Em um terminal aberto no diretório do projeto execute o script "yarn start"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# FUNCIONALIDADES
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## PÁGINA INICIAL (DASHBOARD)
 
-### `yarn eject`
+- Digite o nome de um usuário do github e click no botão "Pesquisar"
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Essa ação deverá exibir na tela a lista de repositórios públicos do usuário informado
+Cada repositório exibido em tela é um elemento clicável, ao ser acionado navegará para a página "Branches"
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ao cliclar no botão "Pesquisar" será exibido um erro caso o campo de input esteja vazio ou tenha sido inserido um valor inválido para pesquisa
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## PÁGINA BRANCHES
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Esta página exibe de forma automática todas as branches do repositório escolhido.
 
-## Learn More
+Cada branche exibida em tela é um elemento clicável, ao ser acionado navegará para a página "Commits"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## PÁGINA COMMITS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Esta página exibe de forma automática todos os commits da branche escolhida.
