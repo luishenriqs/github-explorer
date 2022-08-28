@@ -1,12 +1,35 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import api from "../../services/api";
+import { Link, useLocation } from "react-router-dom";
 import { FiChevronLeft } from "react-icons/fi";
 import logoImg from "../../assets/logo.svg";
 
-import { Header, RepositoryInfo } from "./styles";
+import { Header, RepositoryInfo, SubTitle } from "./styles";
 
 const Commits: React.FC = () => {
-  const rep = true;
+  const [commits, setCommits] = useState([]);
+
+  /*DEFINIR UM LOOPING AQUI*/
+  /*DEFINIR UM LOOPING AQUI*/
+  /*DEFINIR UM LOOPING AQUI*/
+  /*DEFINIR UM LOOPING AQUI*/
+  const autor = Array(commits[1]);
+
+  console.log(".message====> ", typeof autor, autor[0]?.commit.message);
+
+  const location = useLocation();
+  const [, full_name] = location.search.split("?");
+  const url = "/repos/" + full_name + "/commits";
+
+  useEffect(() => {
+    const loadCommmits = async (): Promise<void> => {
+      const response = await api.get(url);
+      const commits = response.data;
+      setCommits(commits);
+    };
+
+    loadCommmits();
+  }, [url]);
 
   return (
     <>
@@ -18,35 +41,42 @@ const Commits: React.FC = () => {
         </Link>
       </Header>
 
-      {rep && (
-        <>
-          <RepositoryInfo>
-            <header>
-              <div>
-                <strong>{"Código corrigido"}</strong>
-              </div>
-            </header>
-            <ul>
-              <li>
-                <strong>{"Matheus"}</strong>
-                <span>Name</span>
-              </li>
-              <li>
-                <strong>{"vicde2@hotmail.com"}</strong>
-                <span>Email</span>
-              </li>
-              <li>
-                <strong>{"2022-06-30T20:23:32Z"}</strong>
-                <span>Date</span>
-              </li>
-              <li>
-                <strong>{"130c185430703efb2f79b786d29c12692c5e5857"}</strong>
-                <span>Hash</span>
-              </li>
-            </ul>
-          </RepositoryInfo>
-        </>
-      )}
+      <SubTitle>
+        <text>Commits</text>
+      </SubTitle>
+
+      {autor.map((commts) => (
+        <RepositoryInfo>
+          <header>
+            <div>
+              <strong>{commts?.commit.message}</strong>
+              <span>Message</span>
+            </div>
+          </header>
+          <ul>
+            <li>
+              <strong>{commts?.commit.author.name}</strong>
+              <span>Name</span>
+            </li>
+            <li>
+              <strong>{commts?.commit.author.emai}</strong>
+              <span>Email</span>
+            </li>
+            <li>
+              <strong>{commts?.commit.author.date}</strong>
+              <span>Date</span>
+            </li>
+            <li>
+              <strong>{commts?.commit.tree.sha}</strong>
+              <span>Hash</span>
+            </li>
+          </ul>
+          <div>
+            <a href={commts?.commit.url}>{commts?.commit.url}</a>
+            <span>Link</span>
+          </div>
+        </RepositoryInfo>
+      ))}
     </>
   );
 };

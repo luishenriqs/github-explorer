@@ -27,21 +27,14 @@ const Branches: React.FC = () => {
 
   let rep = [];
 
-  console.log("location.search ", location.search);
-
   for (let i = 0; i < repos.length; i++) {
-    console.log("repos[i].full_name ", repos[i].full_name);
     if (location.search === "?" + repos[i].full_name) {
-      console.log("repo finded ", repos[i]);
       rep = repos[i];
     }
   }
 
-  console.log("rep ", rep);
-
-  const url = rep ? "/repos/" + rep.full_name + "/branches" : "";
-
-  console.log("url ", url);
+  const full_name = rep.full_name;
+  const url = rep ? "/repos/" + full_name + "/branches" : "";
 
   useEffect(() => {
     const loadBranchs = async (): Promise<void> => {
@@ -87,22 +80,15 @@ const Branches: React.FC = () => {
             </ul>
           </RepositoryInfo>
 
-          {console.log("repos ", repos)}
-          {console.log("allBranches ", allBranches)}
-
           <SubTitle>
             <text>Branches</text>
           </SubTitle>
 
-          {allBranches ? (
+          {allBranches && (
             <Repositories>
-              {allBranches.map((branch) => (
-                <RepoLink repo={branch} />
+              {allBranches.map((branches) => (
+                <RepoLink props={branches} full_name={full_name} />
               ))}
-            </Repositories>
-          ) : (
-            <Repositories>
-              <text>Ocorreu algum erro, tente novamente mais tarde</text>
             </Repositories>
           )}
         </>

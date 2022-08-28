@@ -81,7 +81,7 @@ const Dashboard: React.FC = () => {
 
       <Repositories>
         {repos.map((rep) => (
-          <RepoLink repo={rep} />
+          <RepoLink props={rep} full_name={rep.full_name} />
         ))}
       </Repositories>
     </>

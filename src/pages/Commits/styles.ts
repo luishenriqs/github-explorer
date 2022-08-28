@@ -4,7 +4,7 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  margin-bottom: 50px;
   a {
     display: flex;
     align-items: center;
@@ -22,29 +22,45 @@ export const Header = styled.header`
   }
 `;
 
+export const SubTitle = styled.div`
+  text {
+    font-size: 24px;
+    color: #3a3a3a;
+    line-height: 56px;
+  }
+`;
+
 export const RepositoryInfo = styled.header`
-  margin-top: 80px;
+  margin-top: 30px;
   margin-bottom: 80px;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 5px;
+  width: 100%;
+  padding: 24px;
+  display: block;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s;
+  &:hover {
+    transform: translateX(10px);
+  }
   header {
     display: flex;
     align-items: center;
-
-    img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-    }
-
+    margin-bottom: 50px;
     div {
+      display: flex;
+      flex-direction: column;
       strong {
-        font-size: 36px;
+        font-size: 18px;
         color: #3d3d4d;
       }
-
-      p {
-        font-size: 18px;
-        color: #737380;
+      span {
+        display: block;
         margin-top: 4px;
+        color: #6c6c80;
       }
     }
   }
@@ -52,8 +68,7 @@ export const RepositoryInfo = styled.header`
   ul {
     display: flex;
     list-style: none;
-    margin-top: 40px;
-
+    margin-bottom: 50px;
     li {
       & + li {
         margin-left: 80px;
@@ -61,7 +76,7 @@ export const RepositoryInfo = styled.header`
 
       strong {
         display: block;
-        font-size: 36px;
+        font-size: 18px;
         color: #3d3d4d;
       }
 
@@ -72,73 +87,18 @@ export const RepositoryInfo = styled.header`
       }
     }
   }
-`;
 
-export const Issues = styled.div`
-  margin-top: 80px;
-
-  a {
-    background: #fff;
-    border-radius: 5px;
-    width: 100%;
-    padding: 24px;
-    display: block;
-    text-decoration: none;
+  div {
     display: flex;
-    align-items: center;
-    transition: transform 0.4s;
-    &:hover {
-      transform: translateX(10px);
-    }
-
-    & + a {
-      margin-top: 16px;
-    }
-  }
-
-  div {
-    margin: 0 16px;
-    flex: 1;
-    strong {
-      font-size: 20px;
+    flex-direction: column;
+    a {
+      font-size: 16px;
       color: #3d3d4d;
     }
-
-    p {
-      font-size: 18px;
-      color: #a8a8b3;
+    span {
+      display: block;
       margin-top: 4px;
+      color: #6c6c80;
     }
-  }
-
-  svg {
-    margin-left: auto;
-    color: #cbcbd6;
-  }
-`;
-
-export const SubTitle = styled.div`
-  text {
-    font-size: 24px;
-    color: #3a3a3a;
-    line-height: 56px;
-  }
-`;
-
-export const Repositories = styled.div`
-  margin-top: 10px;
-  max-width: 900px;
-
-  div {
-    flex: 1;
-    strong {
-      font-size: 20px;
-      color: #3d3d4d;
-    }
-  }
-
-  h1 {
-    font-size: 36px;
-    color: #3d3d4d;
   }
 `;

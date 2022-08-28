@@ -3,9 +3,10 @@ interface ICommit {
   url: string;
 }
 
-interface IProps {
+interface IReposOrBranches {
   full_name?: string;
   description?: string;
+  branches_url?: string;
   owner?: {
     login: string;
     avatar_url: string;
@@ -15,8 +16,9 @@ interface IProps {
   protected?: boolean;
 }
 
-interface IData {
-  repo: IProps;
+interface IProps {
+  props: IReposOrBranches;
+  full_name: string;
 }
 
-export type { IData };
+export type { IProps };
