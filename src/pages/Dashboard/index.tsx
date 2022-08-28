@@ -47,10 +47,10 @@ const Dashboard: React.FC = () => {
       setRepositories([]);
       return;
     }
-    const page = 1;
+
     try {
       const response = await api.get<IRepository>(
-        `/users/${newRepo}/repos?type=owner/page=${page}&per_page=5`
+        `/users/${newRepo}/repos?type=owner`
       );
       const repository = response.data;
       setRepositories([repository]);
