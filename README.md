@@ -35,8 +35,8 @@ Ao cliclar no botão "Pesquisar" será exibido um erro caso o campo de input est
 
 - Esta página exibe de forma automática todas as branches do repositório escolhido.
 
-Cada branche exibida em tela é um elemento clicável, ao ser acionado navegará para a página "Commits"
+Cada branch exibida em tela é um elemento clicável, ao ser acionado navegará para a página "Commits"
 
 ## PÁGINA COMMITS
 
-- Esta página exibe de forma automática todos os commits da branche escolhida.
+- Esta página exibe de forma automática todos os commits da branch escolhida.
